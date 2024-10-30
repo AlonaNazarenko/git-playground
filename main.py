@@ -1,6 +1,10 @@
 import words_fetcher
 import random
-# It is Alona's work in git
+
+def word_validation(word, word_previous):
+    while word == word_previous:
+        word = input('Try again: ')
+
 
 def congratulate_user():
     print("You win!")
@@ -23,9 +27,13 @@ word = words[random.randrange(0, len(words))]
 print(f"Can you make up {WORDS_TO_WIN} words from letters in word provided by me?")
 print(f"Your word is '{word}'")
 
+word_previos = ''
 
 while not is_game_over():
+
     guess = input("Your next take: ")
+    word_validation(guess, word_previos)
+    word_previos = guess
     if guess in full_list:
         guessed += 1
         if guessed == WORDS_TO_WIN:
