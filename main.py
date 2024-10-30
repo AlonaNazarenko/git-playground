@@ -1,6 +1,6 @@
 import words_fetcher
 import random
-
+# It is Alona's work in git 
 
 def congratulate_user():
     print(f"Congratulations, you won! your words: {guesses}")
